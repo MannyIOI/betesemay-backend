@@ -1,0 +1,21 @@
+type Category {
+    id: ID!
+    title: String!
+}
+
+type CategoryListReturn {
+    results: [Category]
+    total: Int
+}
+
+type Query {
+    getAllCategories(page: Int): CategoryListReturn
+}
+
+input CategoryCreateInput {
+    title: String!
+}
+
+type Mutation {
+    createCategory(data: CategoryCreateInput): Category
+}
