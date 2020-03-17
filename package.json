@@ -9,7 +9,8 @@
   "scripts": {
     "start": "npm run build && ./copy.sh && node dist/src/index.js",
     "start:prod": "./copy.sh && node dist/src/index.js",
-    "build": "tsc",
+    "build-ts": "tsc",
+    "postinstall": "npm run build-ts",
     "start:dev": "npm run build:dev",
     "build:dev": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,graphql"
   },
