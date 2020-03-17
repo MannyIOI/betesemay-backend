@@ -22,10 +22,10 @@ module.exports = {
   staging: {
     client: "postgresql",
     connection: {
-      host: "localhost",
-      database: "my_db",
-      user: "manny",
-      password: "123456"
+      host: "ec2-52-86-33-50.compute-1.amazonaws.com",
+      database: "dbm3mm62muhqc",
+      user: "rxcmwmienkfhfn",
+      password: "53d10be3ff0fbedb296af97057863efefa47d2c415d1e142301afc9e096edca8"
     },
     pool: {
       min: 2,
@@ -39,9 +39,11 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      host: "ec2-52-86-33-50.compute-1.amazonaws.com",
+      database: "dbm3mm62muhqc",
+      user: "rxcmwmienkfhfn",
+      port: "5432",
+      password: "53d10be3ff0fbedb296af97057863efefa47d2c415d1e142301afc9e096edca8"
     },
     pool: {
       min: 2,
@@ -50,6 +52,6 @@ module.exports = {
     migrations: {
       tableName: "knex_migrations"
     }
-  }
+  },
 
 };
