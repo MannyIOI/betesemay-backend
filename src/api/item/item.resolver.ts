@@ -6,7 +6,7 @@ const getAllItems = async (_, args, { model }, __) => {
 }
 
 const getItemsByCategory = async(_, args, { model }, __) => {
-    return await model.Item.query().where({ category: args.category })
+    return await model.Item.query().where({ category: args.category }).page(args.page, 11)
 }
 
 const createItem = async (_, args, { model }) => {
