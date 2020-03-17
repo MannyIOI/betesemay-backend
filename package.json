@@ -7,7 +7,7 @@
     "node": "10.15.2"
   },
   "scripts": {
-    "start": "npm run build && ./copy.sh && node dist/src/index.js",
+    "start": "npm run build-ts && ./copy.sh && node dist/src/index.js",
     "start:prod": "./copy.sh && node dist/src/index.js",
     "build-ts": "tsc",
     "postinstall": "npm run build-ts",
