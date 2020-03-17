@@ -1,0 +1,21 @@
+type ItemHistory {
+    lendDate: String!
+    returnDate: String
+    item: Item!
+    employee: Employee!
+}
+
+type Query {
+    getAllHistory: [ItemHistory]
+}
+
+input ItemHistoryInput {
+    lendDate: String!
+    returnDate: String
+    item: ItemInput
+    employee: EmployeeInput
+}
+
+type Mutation {
+    createHistory(data: ItemHistoryInput): ItemHistory
+}

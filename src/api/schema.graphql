@@ -1,0 +1,4 @@
+# import Query.*, Mutation.*, * from './category/category.graphql'
+# import Query.*, Mutation.*, * from './employee/employee.graphql'
+# import Query.*, Mutation.*, * from './item/item.graphql'
+# import Query.*, Mutation.*, * from './itemHistory/itemHistory.graphql'

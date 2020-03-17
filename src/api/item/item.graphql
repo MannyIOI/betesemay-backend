@@ -1,0 +1,47 @@
+type Item {
+    id: ID!
+    category: Category!
+    title: String!
+    description: String!
+    dispense_period: Int
+    quantity: Int
+    in_coffin: Int
+}
+
+type ItemListReturn {
+    results: [Item]
+    total: Int
+}
+
+input ItemInput {
+    category: ID!
+    title: String!
+    description: String!
+    dispense_period: Int
+    quantity: Int
+    in_coffin: Int
+}
+
+input ItemUpdateInput {
+    id: ID!
+    category: ID    
+    title: String
+    description: String
+    dispense_period: Int
+    quantity: Int
+    in_coffin: Int
+}
+
+type Query {
+    getItem(id: ID!): Item
+    getAllItems(page: Int): ItemListReturn
+    getItemsByCategory(category: ID!): ItemListReturn
+}
+
+type Mutation {
+    createItem(data: ItemInput): Item!
+    deleteAllItems: Boolean
+    deleteItem(id: String): Boolean
+    updateItem(data: ItemUpdateInput!): Item!
+}
+
