@@ -12,6 +12,7 @@
     "build": "npm run tsc",
     "start:dev": "npm run build:dev",
     "build:dev": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,graphql",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
