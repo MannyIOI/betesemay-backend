@@ -27,6 +27,7 @@ export default {
         getAllCategories
     },
     Mutation: {
-        createCategory
+        createCategory,
+        deleteAllCategories
     }
 }

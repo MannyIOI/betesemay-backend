@@ -5,7 +5,7 @@ export async function up(knex: Knex): Promise<any> {
     return Promise.all([
         knex.schema.createTable("items", table => {
             table.uuid("id").primary();
-            table.string("title");
+            table.string("title").unique();
             table.uuid("category").references("categories.id");
             table.string("description");
             table.integer("dispense_period");

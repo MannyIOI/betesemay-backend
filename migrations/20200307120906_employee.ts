@@ -7,8 +7,8 @@ export async function up(knex: Knex): Promise<any> {
             table.uuid("id").primary();
             table.string("first_name");
             table.string("last_name");
-            table.string("email");
-            table.integer("phone_number");
+            table.string("email").unique();
+            table.integer("phone_number").unique();
             table.string("address");
             table.string("role");
             table.dateTime("created_at");
