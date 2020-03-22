@@ -10,10 +10,11 @@ type Query {
 }
 
 input ItemHistoryInput {
-    lendDate: String!
+    dispenseDate: String!
+    expectedReturnDate: String!
     returnDate: String
-    item: ItemInput
-    employee: EmployeeInput
+    item: ID!
+    to: ID!
 }
 
 type Mutation {
