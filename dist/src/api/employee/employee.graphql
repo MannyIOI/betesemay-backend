@@ -1,17 +1,17 @@
 type Employee {
-    firstName: String
-    lastName: String
+    first_name: String
+    last_name: String
     email: String
-    phoneNumber: String
-    jobTitle: String
+    phone_number: String
+    job_title: String
 }
 
 input EmployeeInput {
-    firstName: String
-    lastName: String
+    first_name: String
+    last_name: String
     email: String
-    phoneNumber: String
-    jobTitle: String
+    phone_number: String
+    job_title: String
 }
 
 type Query {

@@ -18,4 +18,5 @@ input CategoryCreateInput {
 
 type Mutation {
     createCategory(data: CategoryCreateInput): Category
+    deleteAllCategories: Boolean
 }

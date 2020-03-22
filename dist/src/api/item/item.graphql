@@ -35,7 +35,7 @@ input ItemUpdateInput {
 type Query {
     getItem(id: ID!): Item
     getAllItems(page: Int): ItemListReturn
-    getItemsByCategory(category: ID!): ItemListReturn
+    getItemsByCategory(category: ID!, page: Int): ItemListReturn
 }
 
 type Mutation {
