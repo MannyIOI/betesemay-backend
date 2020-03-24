@@ -23,8 +23,7 @@ export class Item extends BaseModel{
             category: { type: "uuid" },
             title: { type: "string" },
             description: { type: "string" },
-            quantity: { type: "integer" },
-            in_coffin: { type: "integer" },
+            state: { type: "string"},
             // inCasketCount: { type: "string", minLength: 1, maxLength: 255 }
           }
         };
