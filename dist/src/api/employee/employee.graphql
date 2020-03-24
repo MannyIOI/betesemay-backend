@@ -1,9 +1,10 @@
 type Employee {
+    id: ID
     first_name: String
     last_name: String
     email: String
     phone_number: String
-    job_title: String
+    role: String
 }
 
 input EmployeeInput {
@@ -11,7 +12,7 @@ input EmployeeInput {
     last_name: String
     email: String
     phone_number: String
-    job_title: String
+    role: String
 }
 
 type Query {

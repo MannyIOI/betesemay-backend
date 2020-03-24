@@ -4,8 +4,7 @@ type Item {
     title: String!
     description: String!
     dispense_period: Int
-    quantity: Int
-    in_coffin: Int
+    state: String
 }
 
 type ItemListReturn {
@@ -18,8 +17,7 @@ input ItemInput {
     title: String!
     description: String!
     dispense_period: Int
-    quantity: Int
-    in_coffin: Int
+    state: String
 }
 
 input ItemUpdateInput {
@@ -28,8 +26,7 @@ input ItemUpdateInput {
     title: String
     description: String
     dispense_period: Int
-    quantity: Int
-    in_coffin: Int
+    state: String
 }
 
 type Query {
