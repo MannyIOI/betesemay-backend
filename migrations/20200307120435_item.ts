@@ -8,9 +8,8 @@ export async function up(knex: Knex): Promise<any> {
             table.string("title").unique();
             table.uuid("category").references("categories.id");
             table.string("description");
+            table.enum("state", ["DISPENSED", "IN_STOCK"]);
             table.integer("dispense_period");
-            table.integer("quantity");
-            table.integer("in_coffin");
             table.dateTime("created_at");
             table.dateTime("updated_at");
         })

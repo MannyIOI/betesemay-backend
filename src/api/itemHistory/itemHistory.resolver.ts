@@ -1,5 +1,7 @@
 const createHistory = async (_, args, { model }, __) => {
-    return model.ItemHistory.insertAndFetch({...args.data})
+    // console.log(model)
+    console.log(new Date())
+    return model.ItemHistory.query().insertAndFetch({...args.data})
 }
 
 const getAllHistory = async (_, args, { model }, __) => {

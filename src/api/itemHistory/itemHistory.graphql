@@ -1,8 +1,8 @@
 type ItemHistory {
-    lendDate: String!
-    returnDate: String
+    dispense_date: String!
+    return_date: String
     item: Item!
-    employee: Employee!
+    to: Employee!
 }
 
 type Query {
@@ -10,9 +10,9 @@ type Query {
 }
 
 input ItemHistoryInput {
-    dispenseDate: String!
-    expectedReturnDate: String!
-    returnDate: String
+    dispense_date: String!
+    expected_return_date: String!
+    return_date: String
     item: ID!
     to: ID!
 }
