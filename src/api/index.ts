@@ -22,6 +22,10 @@ const resolvers = {
     },
     Item: {
         category: item.Category
+    },
+    ItemHistory: {
+        item: history.Item,
+        to: history.Employee
     }
 }
 
