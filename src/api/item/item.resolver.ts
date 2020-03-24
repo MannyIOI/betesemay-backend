@@ -28,14 +28,6 @@ const updateItem = async (_, args, { model }) => {
                             .patchAndFetchById(args.data.id, args.data)
 }
 
-// const dispenseItem = async (_, args, { model }) => {
-//     return await model.Item.query().patchAndFetchById(args.data.id, args.)
-// }
-
-// const collectItem = async (_, args, { model }) => {
-//     return await model.Item.query().patchAndFetchById(args.data.id, args.data)
-// }
-
 const Category = async (parent, args, { model }) => {
     return await model.Category.query().findOne({
         id: parent.category
