@@ -17,9 +17,15 @@ input EmployeeInput {
     role: String
 }
 
+type EmployeeListReturn {
+    results: [Employee]
+    total: Int
+}
+
+
 type Query {
     getEmployee: Employee
-    getAllEmployees: [Employee]
+    getAllEmployees(page: Int): EmployeeListReturn
 }
 
 type Mutation {

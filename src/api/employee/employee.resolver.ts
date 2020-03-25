@@ -7,7 +7,7 @@ const getEmployee = (_, args, { model }, __) => {
 }
 
 const getAllEmployees = async (_, args, {model}, __) => {
-    return await model.Employee.query()
+    return await model.Employee.query().page(args.page, 11);
 }
 
 const updateEmployee = async (_, args, {model}, __) =>{ 
