@@ -3,7 +3,11 @@ const createHistory = async (_, args, { model }, __) => {
 }
 
 const getAllHistory = async (_, args, { model }, __) => {
-    return model.ItemHistory.query()
+    return model.ItemHistory.query().page(args.page, 11)
+}
+
+const getHistoriesByItem = async (_, args, { model }, __) => {
+    return model.ItemHistory.query().where({ item: args.item }).page(args.page, 11)
 }
 
 const Item = async (parent, _, {model}, __) => {
@@ -20,7 +24,8 @@ const Employee = async (parent, _, {model}, __) => {
 
 export default {
     Query: {
-        getAllHistory
+        getAllHistory,
+        getHistoriesByItem
     },
     Mutation: {
         createHistory

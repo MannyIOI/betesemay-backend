@@ -1,12 +1,19 @@
 type ItemHistory {
+    id: ID!
     dispense_date: String!
     return_date: String
     item: Item!
     to: Employee!
 }
 
+type ItemHistoryListReturn {
+    results: [ItemHistory]
+    total: Int
+}
+
 type Query {
-    getAllHistory: [ItemHistory]
+    getAllHistory: [ItemHistoryListReturn]
+    getHistoriesByItem(item: ID, page: Int): ItemHistoryListReturn
 }
 
 input ItemHistoryInput {
