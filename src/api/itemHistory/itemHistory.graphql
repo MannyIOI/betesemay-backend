@@ -12,8 +12,8 @@ type ItemHistoryListReturn {
 }
 
 type Query {
-    getAllHistory: [ItemHistoryListReturn]
-    getHistoriesByItem(item: ID, page: Int): ItemHistoryListReturn
+    getAllHistory: ItemHistoryListReturn
+    getHistoriesByItem(item: ID!, page: Int!): ItemHistoryListReturn
 }
 
 input ItemHistoryInput {
