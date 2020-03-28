@@ -7,7 +7,17 @@ const getAllHistory = async (_, args, { model }, __) => {
 }
 
 const getHistoriesByItem = async (_, args, { model }, __) => {
-    return model.ItemHistory.query().where({ item: args.item }).page(args.page, 11)
+    return model.ItemHistory.query()
+                                .where({ item: args.item })
+                                .orderBy('created_at', 'desc')
+                                .page(args.page, 11)
+}
+
+const getLatestHistory = async (_, args, { model }, __) => {
+    return model.ItemHistory.query().where({ item: args.item })
+                                        .orderBy('created_at', 'desc')
+                                        .limit(1)
+                                        .first()
 }
 
 const Item = async (parent, _, {model}, __) => {
@@ -25,7 +35,8 @@ const Employee = async (parent, _, {model}, __) => {
 export default {
     Query: {
         getAllHistory,
-        getHistoriesByItem
+        getHistoriesByItem,
+        getLatestHistory
     },
     Mutation: {
         createHistory

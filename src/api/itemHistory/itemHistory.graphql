@@ -14,6 +14,7 @@ type ItemHistoryListReturn {
 type Query {
     getAllHistory: ItemHistoryListReturn
     getHistoriesByItem(item: ID!, page: Int!): ItemHistoryListReturn
+    getLatestHistory(item: ID!): ItemHistory
 }
 
 input ItemHistoryInput {
