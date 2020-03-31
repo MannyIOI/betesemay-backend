@@ -17,11 +17,9 @@ export class ItemHistory extends unique(BaseModel) {
     static get jsonSchema() {
         return {
           type: "object",
-          required: ["dispense_date", "expected_return_date", "item", "to"],
+          required: ["type", "item", "to"],
           properties: {
-            dispense_date: { type: "string", minLength: 1, maxLength: 255 },
-            expected_return_date: { type: "string" },
-            return_date: { type: "string", minLength: 1, maxLength: 255 },
+            type: { type: "string", minLength: 1, maxLength: 255 },
             item: { type: "uuid"},
             to: { type: "uuid"}
           }

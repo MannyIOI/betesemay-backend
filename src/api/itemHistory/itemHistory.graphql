@@ -1,9 +1,9 @@
 type ItemHistory {
     id: ID!
-    dispense_date: String!
-    return_date: String
     item: Item!
     to: Employee!
+    type: String
+    created_at: String
 }
 
 type ItemHistoryListReturn {
@@ -18,9 +18,7 @@ type Query {
 }
 
 input ItemHistoryInput {
-    dispense_date: String!
-    expected_return_date: String!
-    return_date: String
+    type: String!
     item: ID!
     to: ID!
 }

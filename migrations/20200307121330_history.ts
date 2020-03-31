@@ -7,9 +7,7 @@ export async function up(knex: Knex): Promise<any> {
             table.uuid("id");
             table.uuid("item").references("items.id");
             table.uuid("to").references("employees.id");
-            table.date("dispense_date");
-            table.date("expected_return_date");
-            table.date("return_date");
+            table.enum("type", ["DISPENSED", "COLLECTED"])
             table.dateTime("created_at");
             table.dateTime("updated_at");
         })
