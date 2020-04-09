@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<any> {
         knex.schema.createTable("items", table => {
             table.uuid("id").primary();
             table.string("title").unique();
-            table.uuid("category").references("categories.id");
+            table.uuid("category").references("categories.id").onDelete('CASCADE');
             table.string("description");
             table.enum("state", ["DISPENSED", "IN_STOCK"]);
             table.integer("dispense_period");
