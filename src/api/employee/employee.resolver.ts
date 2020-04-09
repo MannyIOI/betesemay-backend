@@ -1,4 +1,9 @@
 const createEmployee = async (_, args, {model}, __) => {
+    let employee = await model.Employee.query()
+                                .where({ phone_number: args.data.phone_number })
+                                .orWhere({ email: args.data.email }).count('*').first()
+    if(employee.count > 0){ throw new Error("Sorry a user already exists with this phone number and/or email") }
+
     return await model.Employee.query().insertAndFetch({...args.data})
 }
 
