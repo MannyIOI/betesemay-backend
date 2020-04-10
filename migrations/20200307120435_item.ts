@@ -12,6 +12,7 @@ export async function up(knex: Knex): Promise<any> {
             table.integer("dispense_period");
             table.dateTime("created_at");
             table.dateTime("updated_at");
+            // add expected return date here
         })
     ])
 }
