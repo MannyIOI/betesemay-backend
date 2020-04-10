@@ -5,6 +5,7 @@ type Item {
     description: String!
     dispense_period: Int
     state: String
+    imageId: String
 }
 
 type ItemListReturn {
@@ -18,6 +19,7 @@ input ItemInput {
     description: String!
     dispense_period: Int
     state: String
+    imageId: String
 }
 
 input ItemUpdateInput {
@@ -27,6 +29,7 @@ input ItemUpdateInput {
     description: String
     dispense_period: Int
     state: String
+    imageId: String
 }
 
 type Query {

@@ -24,6 +24,7 @@ export class Item extends BaseModel{
             title: { type: "string" },
             description: { type: "string" },
             state: { type: "string"},
+            imageId: { type: "string" }
             // inCasketCount: { type: "string", minLength: 1, maxLength: 255 }
           }
         };
