@@ -6,6 +6,7 @@ type Item {
     dispense_period: Int
     state: String
     imageId: String
+    expected_return_date: String
 }
 
 type ItemListReturn {
@@ -20,6 +21,7 @@ input ItemInput {
     dispense_period: Int
     state: String
     imageId: String
+    expected_return_date: String
 }
 
 input ItemUpdateInput {
