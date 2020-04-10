@@ -6,6 +6,7 @@ type Employee {
     address: String
     phone_number: String
     role: String
+    imageId: String
 }
 
 input EmployeeInput {
@@ -15,6 +16,7 @@ input EmployeeInput {
     address: String
     phone_number: String
     role: String
+    imageId: String
 }
 
 type EmployeeListReturn {

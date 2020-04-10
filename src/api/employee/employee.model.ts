@@ -24,7 +24,8 @@ export class Employee extends unique(BaseModel) {
             phone_number: { type: "string", minLength: 1, maxLength: 255 },
             first_name: { type: "string", minLength: 1, maxLength: 255 },
             last_name: { type: "string", minLength: 1, maxLength: 255 },
-            role: { type: "string", minLength: 1, maxLength: 255 }
+            role: { type: "string", minLength: 1, maxLength: 255 },
+            imageId: { type: "string" }
           }
         };
       }
