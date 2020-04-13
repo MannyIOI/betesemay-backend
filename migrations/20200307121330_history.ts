@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<any> {
         knex.schema.createTable("histories", table => {
             table.uuid("id");
             table.uuid("item").references("items.id").onDelete('CASCADE');
-            table.uuid("to").references("employees.id");
+            table.uuid("to").references("employees.id").onDelete('CASCADE');
             table.enum("type", ["DISPENSED", "COLLECTED"])
             table.dateTime("created_at");
             table.dateTime("updated_at");
