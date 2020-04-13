@@ -7,8 +7,8 @@ const createEmployee = async (_, args, {model}, __) => {
     return await model.Employee.query().insertAndFetch({...args.data})
 }
 
-const getEmployee = (_, args, { model }, __) => {
-
+const getEmployee = async (_, args, { model }, __) => {
+    return await model.Employee.query().findOne({ id: args.id })
 }
 
 const getAllEmployees = async (_, args, {model}, __) => {
@@ -17,7 +17,7 @@ const getAllEmployees = async (_, args, {model}, __) => {
 
 const updateEmployee = async (_, args, {model}, __) =>{ 
     return await model.Employee.query()
-                                    .patchAndFetchById(args.data.id, args.data)
+                                .patchAndFetchById(args.data.id, args.data)
 }
 
 const deleteEmployee = async (_, args, {model}, __) => {
@@ -37,6 +37,7 @@ export default {
     },
     Mutation: {
         createEmployee,
+        updateEmployee,
         deleteEmployee
     }
 }

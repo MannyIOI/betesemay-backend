@@ -1,11 +1,6 @@
 import { BaseModel } from "../utils/base.model"
 
-const unique = require("objection-unique")({
-    fields: ["email"],
-    identifiers: ["id"]
-});
-
-export class Employee extends unique(BaseModel) {
+export class Employee extends BaseModel {
     static get tableName(): string{
         return "employees";
     }
