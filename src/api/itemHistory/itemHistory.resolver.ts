@@ -3,7 +3,9 @@ const createHistory = async (_, args, { model }, __) => {
 }
 
 const getAllHistory = async (_, args, { model }, __) => {
-    return model.ItemHistory.query().page(args.page, 11)
+    return model.ItemHistory.query()
+                                .orderBy('created_at', 'desc')
+                                .page(args.page, 11)
 }
 
 const getHistoriesByItem = async (_, args, { model }, __) => {

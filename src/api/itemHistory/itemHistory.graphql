@@ -12,7 +12,7 @@ type ItemHistoryListReturn {
 }
 
 type Query {
-    getAllHistory: ItemHistoryListReturn
+    getAllHistory(page: Int!): ItemHistoryListReturn
     getHistoriesByItem(item: ID!, page: Int!): ItemHistoryListReturn
     getLatestHistory(item: ID!): ItemHistory
 }
