@@ -36,6 +36,7 @@ export default {
         getAllEmployees
     },
     Mutation: {
-        createEmployee
+        createEmployee,
+        deleteEmployee
     }
 }
