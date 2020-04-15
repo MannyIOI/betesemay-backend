@@ -7,6 +7,7 @@ type Employee {
     phone_number: String
     role: String
     imageId: String
+    created_at: String
 }
 
 input EmployeeCreateInput {
