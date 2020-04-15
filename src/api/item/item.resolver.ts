@@ -9,6 +9,12 @@ const getItemsByCategory = async(_, args, { model }, __) => {
     return await model.Item.query().where({ category: args.category }).page(args.page, 11)
 }
 
+const searchItems = async (_, args, { model }, __) => {
+    return await model.Item.query()
+                            .where('title', 'ilike', '%'+args.title+'%')
+                            .page(args.page, args.limit)
+}
+
 const createItem = async (_, args, { model }) => {
     return await model.Item.query().insertAndFetch({...args.data})
 }
@@ -38,7 +44,8 @@ export default {
     Query: {
         getItem,
         getAllItems,
-        getItemsByCategory
+        getItemsByCategory,
+        searchItems
     },  
     Mutation: {
         createItem,
