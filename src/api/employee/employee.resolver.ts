@@ -15,6 +15,13 @@ const getAllEmployees = async (_, args, {model}, __) => {
     return await model.Employee.query().page(args.page, 11);
 }
 
+const searchEmployees = async (_, args, {model}) => {
+    return await model.Employee.query()
+                                .where('first_name', 'ilike', '%'+args.first_name+'%')
+                                .orWhere('last_name', 'ilike', '%'+args.last_name+'%')
+                                .page(args.page, args.limit)
+}
+
 const updateEmployee = async (_, args, {model}, __) =>{ 
     return await model.Employee.query()
                                 .patchAndFetchById(args.data.id, args.data)
@@ -33,7 +40,8 @@ const deleteAllEmployees = async (_, args, { model }, __) => {
 export default {
     Query: {
         getEmployee,
-        getAllEmployees
+        getAllEmployees,
+        searchEmployees
     },
     Mutation: {
         createEmployee,
