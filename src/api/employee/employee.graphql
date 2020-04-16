@@ -39,7 +39,7 @@ type EmployeeListReturn {
 type Query {
     getEmployee(id: ID): Employee
     getAllEmployees(page: Int): EmployeeListReturn
-    searchEmployees(first_name: String, last_name: String, page: Int, limit: Int!): EmployeeListReturn
+    searchEmployees(q: String, page: Int, limit: Int!): EmployeeListReturn
 }
 
 type Mutation {

@@ -17,8 +17,8 @@ const getAllEmployees = async (_, args, {model}, __) => {
 
 const searchEmployees = async (_, args, {model}) => {
     return await model.Employee.query()
-                                .where('first_name', 'ilike', '%'+args.first_name+'%')
-                                .orWhere('last_name', 'ilike', '%'+args.last_name+'%')
+                                .where('first_name', 'ilike', '%'+args.q+'%')
+                                .orWhere('last_name', 'ilike', '%'+args.q+'%')
                                 .page(args.page, args.limit)
 }
 
