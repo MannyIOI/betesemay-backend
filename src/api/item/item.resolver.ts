@@ -2,11 +2,11 @@ const getItem = async (_, args, { model }, __) => {
     return await model.Item.query().findById(args.id);
 }
 const getAllItems = async (_, args, { model }, __) => {
-    return await model.Item.query().page(args.page, 11)
+    return await model.Item.query().page(args.page, args.limit)
 }
 
 const getItemsByCategory = async(_, args, { model }, __) => {
-    return await model.Item.query().where({ category: args.category }).page(args.page, 11)
+    return await model.Item.query().where({ category: args.category }).page(args.page, args.limit)
 }
 
 const searchItems = async (_, args, { model }, __) => {

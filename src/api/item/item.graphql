@@ -36,7 +36,7 @@ input ItemUpdateInput {
 
 type Query {
     getItem(id: ID!): Item
-    getAllItems(page: Int): ItemListReturn
+    getAllItems(page: Int, limit: Int!): ItemListReturn
     getItemsByCategory(category: ID!, page: Int): ItemListReturn
     searchItems(title: String, page: Int, limit: Int!): ItemListReturn
 }
