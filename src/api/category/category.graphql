@@ -9,7 +9,7 @@ type CategoryListReturn {
 }
 
 type Query {
-    getAllCategories(page: Int): CategoryListReturn
+    getAllCategories(page: Int, limit: Int!): CategoryListReturn
     searchCategories(title: String, page: Int, limit: Int!): CategoryListReturn
 }
 

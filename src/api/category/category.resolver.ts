@@ -3,7 +3,7 @@ const createCategory = async (_, args, { model }, __) => {
 }
 
 const getAllCategories = async (_, args, { model }, __) => {
-    return await model.Category.query().page(args.page, 11);
+    return await model.Category.query().page(args.page, args.limit);
 }
 
 const searchCategories = async (_, args, { model }, __) => {
